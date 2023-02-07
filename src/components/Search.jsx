@@ -24,7 +24,6 @@ function Search(props) {
   const handleFormSubmit = (e, search) => {
     e.preventDefault();
     navigate(`/search?book=${search.trim()}`);
-    console.log(search);
     return setSearch("");
   };
 
@@ -78,7 +77,7 @@ function Search(props) {
     <>
       <Container>
         <Grid container alignItems={"center"} justifyContent={"center"}>
-          <Grid item xs={8} sm={8} md={5} lg={5}>
+          <Grid item xs={8} sm={8} md={5} lg={5} xl={5}>
             <Typography
               variant="h6"
               textAlign={"center"}

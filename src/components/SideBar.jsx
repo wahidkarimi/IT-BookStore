@@ -160,7 +160,7 @@ export default function MiniDrawer(props) {
             }
           ].map((item) => (
             <ListItem key={item.value} disablePadding sx={{ display: "block" }}>
-              <Link to={item.link} style={{ textDecoration: "none", color: "#495464" }}>
+              <Link to={item.link} style={{ textDecoration: "none", color: "#495464" }} >
                 <ListItemButton
                   sx={{
                     minHeight: 48,
@@ -198,7 +198,7 @@ export default function MiniDrawer(props) {
               },
           ].map((item) => (
             <ListItem key={item.value} disablePadding sx={{ display: "block", color: "#393E46" }}>
-              <a href={item.link} style={{ textDecoration: "none", color: "#495464" }}>
+              <a href={item.link} style={{ textDecoration: "none", color: "#495464" }} target="_blank">
                 <ListItemButton
                   sx={{
                     minHeight: 48,

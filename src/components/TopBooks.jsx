@@ -21,7 +21,6 @@ function TopBooks() {
   const dispatch = useDispatch();
 
   const { data, loading } = book;
-  console.log(data);
 
   useEffect(() => {
     dispatch(fetchBooks());
@@ -57,6 +56,7 @@ function TopBooks() {
                   sm={4}
                   md={2}
                   lg={2}
+                  xl={2}
                   key={index}
                   margin={"40px"}
                 >

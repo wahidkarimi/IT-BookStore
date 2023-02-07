@@ -24,7 +24,6 @@ function SearchedBook() {
   const searchBook = useSelector((state) => state.book);
   const { data, loading } = searchBook;
 
-  console.log(data);
   useEffect(() => {
     dispatch(fetchSearchedBook(inputVlaue));
   }, [dispatch, inputVlaue]);
@@ -76,6 +75,7 @@ function SearchedBook() {
                 sm={4}
                 md={2}
                 lg={2}
+                xl={2}
                 key={index}
                 margin={"40px"}
               >

@@ -61,7 +61,8 @@ function BookDetailes() {
         />
       </Typography>
       <Grid container justifyContent={"center"} mb={"30px"} gap={"10px"}>
-        <Grid item xs={7} sm={6} md={3} lg={3}>
+        <Grid item xs={7} sm={6} md={3} lg={3}
+        xl={3}>
           <Card
             sx={{
               textAlign: "center",
@@ -127,7 +128,7 @@ function BookDetailes() {
             )}
           </Card>
         </Grid>
-        <Grid item xs={10} sm={10} md={8} lg={8}>
+        <Grid item xs={10} sm={10} md={8} lg={8} xl={8}>
           <Tableinfo data={data} />
           <Divider
             textAlign="left"

@@ -19,7 +19,7 @@ function Skeletons() {
           />
         </Divider>
         <Grid container alignItems="center" justifyContent="center">
-          {[...Array(match ? 20 : 10)].map((_item) => {
+          {[...Array(match ? 20 : 10)].map((_item, index) => {
             return (
               <Grid
                 item
@@ -27,6 +27,7 @@ function Skeletons() {
                 sm={4}
                 md={2}
                 lg={2}
+                key={index}
                 margin={"40px"}
               >
                 <Card
