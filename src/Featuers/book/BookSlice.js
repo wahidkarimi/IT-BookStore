@@ -16,14 +16,12 @@ const initialState = {
 export const fetchSearchedBook = createAsyncThunk('book/fetchSearchedBook', async(searchString) => {
   const res = await fetch(`https://api.itbook.store/1.0/search/${searchString}`) 
   const data = await res.json()
-  console.log(data)
   return data
 });
 
 export const fetchBookDetailes = createAsyncThunk('book/fetchBookDetailes', async(searchString) => {
   const res = await fetch(`https://api.itbook.store/1.0/books/${searchString}`) 
   const data = await res.json();
-  console.log(data)
   return data;
 })
 
@@ -34,37 +32,38 @@ export const bookSlice = createSlice({
   initialState,
   reducers: {
   },
-  extraReducers: {
-    [fetchBooks.pending]: (state, action) =>{
+  extraReducers: (builder) => {
+    builder
+    .addCase(fetchBooks.pending, (state) => {
       state.loading = true
-    },
-    [fetchBooks.fulfilled]: (state, action) =>{
+    })
+    .addCase(fetchBooks.fulfilled, (state, action) => {
       state.loading = false
       state.data = action.payload
-    },
-    [fetchBooks.rejected]: (state, action) => {
+    })
+    .addCase(fetchBooks.rejected, (state) => {
       state.loading = true
-    },
-    [fetchSearchedBook.pending]: (state, action) =>{
+    })
+    .addCase(fetchSearchedBook.pending, (state) => {
       state.loading = true
-    },
-    [fetchSearchedBook.fulfilled]: (state, action) =>{
+    })
+    .addCase(fetchSearchedBook.fulfilled, (state, action) => {
       state.loading = false
       state.data = action.payload
-    },
-    [fetchSearchedBook.rejected]: (state, action) => {
+    })
+    .addCase(fetchSearchedBook.rejected, (state) => {
       state.loading = true
-    },
-    [fetchBookDetailes.pending]: (state, action) =>{
+    })
+    .addCase(fetchBookDetailes.pending, (state) => {
       state.loading = true
-    },
-    [fetchBookDetailes.fulfilled]: (state, action) =>{
+    })
+    .addCase(fetchBookDetailes.fulfilled, (state, action) => {
       state.loading = false
       state.data = action.payload
-    },
-    [fetchBookDetailes.rejected]: (state, action) => {
+    })
+    .addCase(fetchBookDetailes.rejected, (state) => {
       state.loading = true
-    }
+    })
   }
 })
 

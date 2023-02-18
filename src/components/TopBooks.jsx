@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Avatar,
-  Button,
   Card,
   CardMedia,
   Chip,
@@ -15,6 +14,7 @@ import {
 import { fetchBooks } from "../Featuers/book/BookSlice";
 import { Link } from "react-router-dom";
 import Skeletons from "./Skeleton";
+import SellIcon from "@mui/icons-material/Sell";
 
 function TopBooks() {
   const book = useSelector((state) => state.book);
@@ -32,18 +32,26 @@ function TopBooks() {
 
   return (
     <>
-      <Container>
+      <Container maxWidth={"500"}>
         <Divider
           textAlign="left"
           sx={{
             fontSize: "19px",
             fontWeight: "600",
-            marginTop: "45px",
+            marginTop: "50px",
             marginBottom: "30px",
-            color: "#495464",
           }}
         >
-          <Chip variant="outlined" sx={{ backgroundColor: "#f4f4f4"}} label={<><span style={{ color: "#B7235A" }}> New </span><span style={{ color: "#114B70" }}>Releases Books</span></>} />
+          <Chip
+            variant="outlined"
+            sx={{ backgroundColor: "#f4f4f4" }}
+            label={
+              <>
+                <span style={{ color: "#B7235A" }}> New </span>
+                <span style={{ color: "#1d556f" }}>Releases Books</span>
+              </>
+            }
+          />
         </Divider>
         <Grid container alignItems={"center"} justifyContent={"center"}>
           {data.books &&
@@ -52,43 +60,57 @@ function TopBooks() {
               return (
                 <Grid
                   item
-                  xs={5}
+                  xs={6}
                   sm={4}
-                  md={2}
+                  md={3}
                   lg={2}
                   xl={2}
                   key={index}
-                  margin={"40px"}
+                  margin={"30px"}
                 >
                   <Card
                     sx={{
-                      maxWidth: 225,
+                      maxWidth: 240,
                       textAlign: "center",
                       boxShadow: "none",
                       marginBottom: "30px",
+                      bgcolor: "#FEFEFF",
                     }}
                   >
-                    <CardMedia className="net"
-                      sx={{ background: "#f4f4f4", borderRadius: "5px" }}
+                    <CardMedia
+                      className="shadow"
+                      sx={{
+                        background: "#f4f4f4",
+                        borderRadius: "5px",
+                        border: "1px solid darkgray",
+                      }}
                       component="img"
                       alt="book"
                       height="auto"
                       width="auto"
                       image={item.image}
                     />
-                    <Link to={`/book/${isbn13}`}  style={{ color: "#124A72", paddingTop: "20px" }}>
-                    <Typography
-                      height={"95px"}
-                      variant="subtitle2"
-                      color={"#124A72"}
-                      fontWeight={800}
-                      pt={"12px"}
+                    <Link
+                      to={`/book/${isbn13}`}
+                      style={{ color: "#1d556f", paddingTop: "20px" }}
                     >
-                      {item.title}
-                    </Typography>
+                      <Typography
+                        height={"95px"}
+                        variant="subtitle2"
+                        color={"#1d556f"}
+                        fontWeight={800}
+                        pt={"12px"}
+                      >
+                        {item.title}
+                      </Typography>
                     </Link>
                     <Typography variant="h6" color={"#B7225B"} fontWeight={800}>
                       <Chip
+                        avatar={
+                          <Avatar>
+                            <SellIcon fontSize="30px" color="info" />
+                          </Avatar>
+                        }
                         label={item.price}
                         variant="outlined"
                         sx={{ color: "#B7225B", bgcolor: "#f4f4f4" }}

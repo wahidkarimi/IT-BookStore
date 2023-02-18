@@ -1,126 +1,137 @@
 import SearchIcon from "@mui/icons-material/Search";
-import {
-  Button,
-  Grid,
-  InputAdornment,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Grid, InputAdornment, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Toolbar from '@mui/material/Toolbar';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Fab from '@mui/material/Fab';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Fade from '@mui/material/Fade';
-import PropTypes from 'prop-types';
+import Toolbar from "@mui/material/Toolbar";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Fab from "@mui/material/Fab";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Fade from "@mui/material/Fade";
+import PropTypes from "prop-types";
 
 function Search(props) {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const [emptyInput, setEmptyInput] = useState(false);
 
   const handleFormSubmit = (e, search) => {
     e.preventDefault();
+    if (search.trim() === "") {
+      setEmptyInput(true);
+      return setTimeout(() => {
+        setEmptyInput(false);
+      }, 2500);
+    }
     navigate(`/search?book=${search.trim()}`);
     return setSearch("");
   };
 
   function ScrollTop(props) {
     const { children, window } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
     const trigger = useScrollTrigger({
       target: window ? window() : undefined,
       disableHysteresis: true,
       threshold: 100,
     });
-  
+
     const handleClick = (event) => {
       const anchor = (event.target.ownerDocument || document).querySelector(
-        '#back-to-top-anchor',
+        "#back-to-top-anchor"
       );
-  
+
       if (anchor) {
         anchor.scrollIntoView({
-          block: 'center',
+          block: "center",
         });
       }
     };
-  
+
     return (
       <Fade in={trigger}>
         <Box
           onClick={handleClick}
           role="presentation"
-          sx={{ position: 'fixed', bottom: 25, right: 20 }}
+          sx={{ position: "fixed", bottom: 25, right: 20 }}
         >
           {children}
         </Box>
       </Fade>
     );
   }
-  
+
   ScrollTop.propTypes = {
     children: PropTypes.element.isRequired,
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     window: PropTypes.func,
   };
-  
 
   return (
     <>
       <Container>
         <Grid container alignItems={"center"} justifyContent={"center"}>
-          <Grid item xs={8} sm={8} md={5} lg={5} xl={5}>
+          <Grid
+            item
+            xs={10}
+            sm={8}
+            md={8}
+            lg={6}
+            xl={6}
+            mt={"10px"}
+            mb={"10px"}
+          >
             <Typography
-              variant="h6"
+              variant="h5"
               textAlign={"center"}
-              color={"#124A72"}
+              color={"#1d556f"}
               marginTop={"100px"}
               fontWeight={"600"}
             >
-              Welcome to <span style={{ color: "#B7225B"}}>IT</span> Bookstore
+              Welcome to <span style={{ color: "#B7225B" }}>IT</span> Bookstore
               <br />
-              <span style={{ color: "#B7225B"}}>IT</span>, Programming and Computer Science Books
+              <span style={{ color: "#B7225B" }}>IT</span>, Programming and
+              Computer Science Books
             </Typography>
 
             <form
               onSubmit={(e) => handleFormSubmit(e, search)}
               autoComplete="off"
             >
-                <TextField
-                  fullWidth
-                  sx={{ backgroundColor: "#f4f4f4", mt: "10px", color: "#124A72" }}
-                  placeholder="Search..."
-                  variant="outlined"
-                  color="info"
-                  size="small"
-                  id="fullWidth"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <SearchIcon color="info" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
+              <TextField
+                fullWidth
+                sx={{ bgcolor: "#f4f4f4", mt: "10px" }}
+                placeholder="Search books by Title or Author..."
+                variant="outlined"
+                size="small"
+                color={!emptyInput ? "info" : "secondary"}
+                id="fullWidth"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <SearchIcon color="info" />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <Typography
+                variant="subtitle2"
+                fontWeight={"600"}
+                color={"secondary"}
+                sx={{ display: !emptyInput ? "none" : "block" }}
+              >
+                please fill the input
+              </Typography>
             </form>
           </Grid>
         </Grid>
         <Toolbar id="back-to-top-anchor" />
-      <ScrollTop {...props}>
-        <Fab size="small" aria-label="scroll back to top" color='info'>
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
+        <ScrollTop {...props}>
+          <Fab size="small" aria-label="scroll back to top" color="info">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
       </Container>
     </>
   );

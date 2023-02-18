@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Button,
   Card,
   CardMedia,
@@ -14,6 +15,8 @@ import { Link, useLocation } from "react-router-dom";
 import { fetchSearchedBook } from "../Featuers/book/BookSlice";
 import Skeletons from "./Skeleton";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import SellIcon from "@mui/icons-material/Sell";
+import NotFound from "./NotFound";
 
 function SearchedBook() {
   const location = useLocation();
@@ -28,37 +31,43 @@ function SearchedBook() {
     dispatch(fetchSearchedBook(inputVlaue));
   }, [dispatch, inputVlaue]);
 
+  if (data.total === "0" || data.error === "[search] Invalid request") {
+    return <NotFound total={data.total} />;
+  }
+
   if (loading) {
     return <Skeletons />;
   }
 
   return (
-    <Container>
-      <Link to="/">
-        <Button sx={{ bgcolor: "#f4f4f4" }}>
-          <KeyboardBackspaceIcon color="primary" />
-        </Button>
-      </Link>
+    <Container maxWidth={"500"}>
       <Divider
         textAlign="left"
         sx={{
-          fontSize: "17px",
+          fontSize: "19px",
           fontWeight: "600",
+          marginTop: "50px",
           marginBottom: "30px",
-          color: "#114B70",
         }}
       >
+        <Link to="/">
+          <Button color="info" variant="contained" size="small">
+            <KeyboardBackspaceIcon />
+          </Button>
+        </Link>
+        <br />
         <Chip
-          sx={{ bgcolor: "#f4f4f4" }}
+          variant="outlined"
+          sx={{ bgcolor: "#f4f4f4", mt: "10px" }}
           label={
             <>
               <Typography
                 fontWeight={800}
                 variant={"subtitle2"}
-                sx={{ color: "#114B70" }}
-                mt={"0px"}
+                pt={"2px"}
+                sx={{ color: "#1d556f" }}
               >
-                Total: {data.total}
+                <span style={{ color: "#B7225B" }}> Total: </span> {data.total}
               </Typography>
             </>
           }
@@ -68,47 +77,63 @@ function SearchedBook() {
         {data.books &&
           data.books.map((item, index) => {
             const { isbn13 } = item;
+
             return (
               <Grid
                 item
-                xs={5}
+                xs={6}
                 sm={4}
-                md={2}
+                md={3}
                 lg={2}
                 xl={2}
                 key={index}
-                margin={"40px"}
+                margin={"30px"}
               >
                 <Card
                   sx={{
-                    maxWidth: 225,
+                    maxWidth: 240,
                     textAlign: "center",
                     boxShadow: "none",
                     marginBottom: "30px",
+                    bgcolor: "#FEFEFF",
                   }}
                 >
                   <CardMedia
-                    sx={{ background: "whiteSmoke", borderRadius: "5px" }}
+                    className="shadow"
+                    sx={{
+                      background: "#f4f4f4",
+                      borderRadius: "5px",
+                      border: "1px solid darkgray",
+                    }}
                     component="img"
                     alt="book"
                     height="auto"
                     width="auto"
                     image={item.image}
                   />
-                  <Link  to={`/book/${isbn13}`} style={{ color: "#114B70", paddingTop: "20px" }}>
-                  <Typography
-                    height={"95px"}
-                    variant="subtitle2"
-                    color={"#124A72"}
-                    fontWeight={800}
-                    pt={"12px"}
+                  <Link
+                    to={`/book/${isbn13}`}
+                    style={{ color: "#1d556f", paddingTop: "20px" }}
                   >
-                    {item.title}
-                  </Typography>
+                    <Typography
+                      height={"95px"}
+                      variant="subtitle2"
+                      color={"#1d556f"}
+                      fontWeight={800}
+                      pt={"12px"}
+                    >
+                      {item.title}
+                    </Typography>
                   </Link>
                   <Typography variant="h6" color={"#B7225B"} fontWeight={800}>
                     <Chip
+                      avatar={
+                        <Avatar>
+                          <SellIcon fontSize="30px" color="info" />
+                        </Avatar>
+                      }
                       label={item.price}
+                      variant="outlined"
                       sx={{ color: "#B7225B", bgcolor: "#f4f4f4" }}
                     />
                   </Typography>

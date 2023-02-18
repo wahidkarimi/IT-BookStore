@@ -1,12 +1,4 @@
-import Navbar from "./components/Navbar";
-import {
-  Container,
-  createTheme,
-  Grid,
-  Paper,
-  Switch,
-  ThemeProvider,
-} from "@mui/material";
+import { createTheme, Grid, ThemeProvider } from "@mui/material";
 import Search from "./components/Search";
 import { Route, Routes, useMatch } from "react-router-dom";
 import TopBooks from "./components/TopBooks";
@@ -14,6 +6,7 @@ import SearchedBook from "./components/SearchedBook";
 import BookDetailes from "./components/BookDetailes";
 import { useState } from "react";
 import MiniDrawer from "./components/SideBar";
+import About from "./components/About";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,11 +15,11 @@ function App() {
     palette: {
       mode: darkMode ? "dark" : "light",
       background: {
-        default: "#fff"
+        default: "#FEFEFF",
       },
-      
+
       info: {
-        main: "#124A72",
+        main: "#1d556f",
       },
       secondary: {
         main: "#B7225B",
@@ -35,7 +28,7 @@ function App() {
         main: "white",
       },
       black: {
-        main: "black",
+        main: "#231F20",
       },
     },
     typography: {
@@ -45,31 +38,31 @@ function App() {
       MuiDrawer: {
         styleOverrides: {
           paper: {
-            backgroundColor: "#124A72",
+            backgroundColor: "#F4F4F4",
           },
         },
       },
     },
-    
   });
 
   const match = useMatch("/book/:id");
+  const about = useMatch("/about");
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <Navbar /> */}
-
-      <Grid sx={{ display: { xs: "block", sm: "flex" } }}>
-        <MiniDrawer />
-        <main>
-        {match ? null : <Search />}
-          {/* <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /> */}
-          <Routes>
-            <Route path="/" element={<TopBooks />} />
-            <Route path="/search" element={<SearchedBook />} />
-            <Route path="/book/:id" element={<BookDetailes />} />
-          </Routes>
-        </main>
+      <Grid container justifyContent={"center"} width={"100%"}>
+        <Grid sx={{ display: { xs: "block", sm: "flex" } }}>
+          <MiniDrawer />
+          <main>
+            {match || about ? null : <Search />}
+            <Routes>
+              <Route path="/" element={<TopBooks />} />
+              <Route path="/search" element={<SearchedBook />} />
+              <Route path="/book/:id" element={<BookDetailes />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </main>
+        </Grid>
       </Grid>
     </ThemeProvider>
   );

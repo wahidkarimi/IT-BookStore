@@ -3,7 +3,6 @@ import {
   Container,
   Grid,
   Skeleton,
-
 } from "@mui/material";
 import React from "react";
 
@@ -13,13 +12,14 @@ function DescSkeleton() {
 
 
   return (
-    <Container>
+    <Container maxWidth={"500"}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", justifyContent:"center"}}>
       <Skeleton
-        variant="rounded"
-        width={"200px"}
-        height={"20px"}
+        variant="rectangular"
+        width={"350px"}
+        height={"30px"}
         animation={"wave"}
-        sx={{ textAlign: "center", mt: "40px" }}
+        sx={{ textAlign: "center", mt: "80px"}}
       />
 
       <Skeleton
@@ -27,36 +27,42 @@ function DescSkeleton() {
         width={"150px"}
         height={"12px"}
         animation={"wave"}
-        sx={{ textAlign: "center" }}
+        sx={{ textAlign: "center", mt: "5px"}}
       />
-      <Grid container justifyContent={"center"} mb={"30px"} gap={"10px"}>
-        <Grid item xs={7} sm={6} md={3} lg={3}>
+      </div>
+      <Grid container alignItems={"center"} justifyContent={"center"} mb={"30px"}>
+        <Grid item xs={7} sm={6} md={5} lg={3}
+        xl={3} margin={"10px"}>
+          
           <Card
             sx={{
               textAlign: "center",
               boxShadow: "none",
-              background: "whiteSmoke",
-              pb: "30px",
               mb: "10px",
             }}
           >
             <Skeleton
-              height={"250px"}
-              width={"200px"}
+              height={"350px"}
+              width={"430px"}
               animation={"wave"}
               variant={"rectangular"}
             />
 
-            <Skeleton
+          </Card>
+          <Skeleton
               variant="rectangular"
               animation="wave"
-              height={"15px"}
-              width={"85px"}
+              height={"30px"}
+              width={"100%"}
             />
-          </Card>
         </Grid>
-        <Grid item xs={10} sm={10} md={8} lg={8}>
-            
+        <Grid item xs={10} sm={10} md={8} lg={6} xl={6}>
+            <Skeleton
+             variant="rounded"
+             height={"310px"}
+             width={"600px"}
+             animation={"wave"}
+             />
           <Skeleton
             variant="rounded"
             height={"10px"}
@@ -66,10 +72,10 @@ function DescSkeleton() {
           />
           <Skeleton
             variant="rounded"
-            width={"300px"}
-            height={"5px"}
+            width={"600px"}
+            height={"50px"}
             animation={"wave"}
-            sx={{ textAlign: "center" }}
+            sx={{ textAlign: "center", mt: "10px" }}
           />
         </Grid>
       </Grid>

@@ -9,7 +9,12 @@ function Skeletons() {
       <Container>
         <Divider
           textAlign="left"
-          sx={{ marginTop: "20px", marginBottom: "30px" }}
+          sx={{
+            fontSize: "19px",
+            fontWeight: "600",
+            marginTop: "50px",
+            marginBottom: "30px",
+          }}
         >
           <Skeleton
             variant="rectangular"
@@ -25,14 +30,15 @@ function Skeletons() {
                 item
                 xs={5}
                 sm={4}
-                md={2}
+                md={3}
                 lg={2}
+                xl={2}
                 key={index}
-                margin={"40px"}
+                margin={"30px"}
               >
                 <Card
                   sx={{
-                    maxWidth: 225,
+                    maxWidth: 240,
                     boxShadow: "none",
                     display: "flex",
                     flexDirection: "column",
@@ -40,7 +46,7 @@ function Skeletons() {
                   }}
                 >
                   <Skeleton
-                    variant="rectangular"
+                    variant="rounded"
                     animation="wave"
                     width="200px"
                     height="210px"
@@ -48,28 +54,21 @@ function Skeletons() {
                       textAlign: "center",
                       alignItems: "center",
                       justifyContent: "center",
-                      borderRadius: "5px"
+                      borderRadius: "5px",
                     }}
                   />
                   <Skeleton
                     sx={{ mt: "15px" }}
-                    variant="rectangular"
+                    variant="rounded"
                     animation="wave"
                     width="200px"
                     height="20px"
                   />
                   <Skeleton
                     sx={{ mt: "15px" }}
-                    variant="rectangular"
+                    variant="rounded"
                     animation="wave"
                     width="70px"
-                    height="20px"
-                  />
-                  <Skeleton
-                    sx={{ mt: "15px" }}
-                    variant="rectangular"
-                    animation="wave"
-                    width="60px"
                     height="20px"
                   />
                 </Card>
