@@ -10,16 +10,14 @@ import {
 } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { fetchBookDetailes } from "../Featuers/book/BookSlice";
 import DescSkeleton from "./DescSkeleton";
 import Tableinfo from "./Tableinfo";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { useNavigate } from "react-router-dom";
+
 
 function BookDetailes() {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -37,53 +35,23 @@ function BookDetailes() {
 
   return (
     <Container maxWidth={"500"}>
-      <Typography
+      <Grid container alignItems={"center"} justifyContent={"center"} mb={"30px"}>
+        <Grid item xs={11} sm={10} md={10} lg={10} xl={12}>
+        <Typography
         variant="h4"
         width={"100%"}
         fontWeight={"600"}
         textAlign={"center"}
         mt={"100px"}
+        mb={"10px"}
         sx={{ color: "#1d556f" }}
       >
         {data.title}
       </Typography>
-      <Typography
-        width={"100%"}
-        variant="subtitle2"
-        pt={"5px"}
-        color={"secondary"}
-        fontWeight={"600"}
-        textAlign={"center"}
-        mb={"8px"}
-      >
-        <Chip
-          sx={{ bgcolor: "#f4f4f4", color: "#B7225B" }}
-          label={data.subtitle}
-        />
-      </Typography>
-      <Typography
-        width={"100%"}
-        variant="subtitle2"
-        pt={"5px"}
-        color={"secondary"}
-        fontWeight={"600"}
-        textAlign={"left"}
-        mb={"5px"}
-      >
-        <Link>
-          <Button
-            color="info"
-            variant="contained"
-            size="small"
-            onClick={() => navigate(-1)}
-          >
-            <KeyboardBackspaceIcon />
-          </Button>
-        </Link>
-      </Typography>
-      <Grid container alignItems={"center"} justifyContent={"center"}>
-        <Grid item xs={7} sm={6} md={5} lg={3} xl={3} margin={"10px"}>
-          <Card
+    
+        </Grid>
+        <Grid item xs={11} sm={6} md={5} lg={3} xl={3} margin={"10px"}>
+          <Card 
             sx={{
               textAlign: "center",
               boxShadow: "none",
@@ -109,7 +77,7 @@ function BookDetailes() {
                 variant="contained"
                 color="secondary"
                 sx={{
-                  mt: "6px",
+                  mb: "6px",
                   width: "100%",
                   alignItems: "center",
                   textAlign: "center",
@@ -148,7 +116,7 @@ function BookDetailes() {
             </a>
           )}
         </Grid>
-        <Grid item xs={10} sm={10} md={8} lg={6} xl={6}>
+        <Grid item xs={11} sm={10} md={8} lg={6} xl={6}>
           <Tableinfo data={data} />
           <Divider
             textAlign="left"
