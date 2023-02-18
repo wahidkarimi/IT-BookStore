@@ -72,7 +72,7 @@ function Search(props) {
         <Grid container alignItems={"center"} justifyContent={"center"}>
           <Grid
             item
-            xs={10}
+            xs={11}
             sm={8}
             md={8}
             lg={6}

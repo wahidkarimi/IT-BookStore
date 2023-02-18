@@ -60,7 +60,7 @@ function TopBooks() {
               return (
                 <Grid
                   item
-                  xs={6}
+                  xs={7}
                   sm={4}
                   md={3}
                   lg={2}

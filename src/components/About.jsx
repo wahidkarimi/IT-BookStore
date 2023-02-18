@@ -4,14 +4,14 @@ import React from "react";
 function About() {
   return (
     <Container>
-      <Grid container alignItems={"center"} justifyContent={"center"}>
-        <Grid item xs={11} sm={10} md={10} lg={11} mt={"120px"} xl={12}>
+      <Grid container alignItems={"center"} justifyContent={"center"} mb={"20px"}>
+        <Grid item xs={11} sm={10} md={10} lg={11} xl={12} mt={"90px"}>
         <Divider
           textAlign="left"
           sx={{
             fontWeight: "600",
             marginTop: "20px",
-            marginBottom: "40px",
+            marginBottom: "20px",
           }}
         >
           <Chip
