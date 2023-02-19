@@ -102,6 +102,7 @@ export default function MiniDrawer(props) {
   };
 
   return (
+    <>
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open} sx={{ bgcolor: "#1d556f" }}>
@@ -247,5 +248,6 @@ export default function MiniDrawer(props) {
       </Drawer>
       </ClickAwayListener>
     </Box>
+    </>
   );
 }

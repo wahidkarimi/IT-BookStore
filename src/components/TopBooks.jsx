@@ -9,12 +9,14 @@ import {
   Container,
   Divider,
   Grid,
+  TextField,
   Typography,
 } from "@mui/material";
 import { fetchBooks } from "../Featuers/book/BookSlice";
 import { Link } from "react-router-dom";
 import Skeletons from "./Skeleton";
 import SellIcon from "@mui/icons-material/Sell";
+import Search from "./Search";
 
 function TopBooks() {
   const book = useSelector((state) => state.book);
@@ -32,7 +34,7 @@ function TopBooks() {
 
   return (
     <>
-      <Container maxWidth={"500"}>
+      <Container maxWidth="xl">
         <Divider
           textAlign="left"
           sx={{

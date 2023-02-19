@@ -1,4 +1,4 @@
-import { createTheme, Grid, ThemeProvider } from "@mui/material";
+import { Container, createTheme, Grid, ThemeProvider } from "@mui/material";
 import Search from "./components/Search";
 import { Route, Routes, useMatch } from "react-router-dom";
 import TopBooks from "./components/TopBooks";
@@ -9,7 +9,6 @@ import MiniDrawer from "./components/SideBar";
 import About from "./components/About";
 import { useEffect } from "react";
 import Loader from "./components/Loader";
-
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [progress, setProgress] = useState(true);
@@ -18,7 +17,7 @@ function App() {
     setTimeout(() => {
       setProgress(false);
     }, 4000)
-  }, [])
+  }, []);
 
   const theme = createTheme({
     palette: {
@@ -59,23 +58,23 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+        
       {progress ? (
         <Loader />
       ) : (
-        <Grid container justifyContent={"center"} width={"100%"}>
-          <Grid sx={{ display: { xs: "block", sm: "flex" } }}>
+          <Grid justifyContent={"center"} sx={{ display: { xs: "block", sm: "flex" } }}>
             <MiniDrawer />
             <main>
-              {match || about ? null : <Search />}
+            {match || about ? null : <Search />}
               <Routes>
                 <Route path="/" element={<TopBooks />} />
                 <Route path="/search" element={<SearchedBook />} />
                 <Route path="/book/:id" element={<BookDetailes />} />
                 <Route path="/about" element={<About />} />
               </Routes>
+              
             </main>
           </Grid>
-        </Grid>
       )}
     </ThemeProvider>
   );

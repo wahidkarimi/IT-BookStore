@@ -39,10 +39,9 @@ export default function Loader() {
           Book.Store
         </Typography>
       </div>
-      <Box sx={{ width: "140px", mt: "15px" }} textAlign={"center"}>
+      <Box sx={{ width: "150px", mt: "15px" }} textAlign={"center"}>
         <LinearProgress
-          variant="determinate"
-          value={progress}
+
           color={"info"}
           sx={{ textAlign: "center" }}
         />
