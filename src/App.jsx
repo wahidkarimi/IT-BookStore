@@ -14,9 +14,11 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [progress, setProgress] = useState(true);
 
-  window.addEventListener("load", () => {
-    setProgress(false);
-  });
+  useEffect(() => {
+    setTimeout(() => {
+      setProgress(false);
+    }, 4000)
+  }, [])
 
   const theme = createTheme({
     palette: {

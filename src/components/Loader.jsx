@@ -33,13 +33,13 @@ export default function Loader() {
       position={"absolute"}
       top={"35%"}
     >
-      <div style={{ display: "flex" }}>
-        <img src={logo} alt="" style={{ borderRadius: "5px" }} />
-        <Typography fontWeight={"900"} variant={"h3"} color={"#1d556f"}>
+      <div style={{ display: "flex", alignItems: "center"  }}>
+        <img src={logo} alt="IT" style={{ borderRadius: "5px" }} width={"auto"} height={"auto"} />
+        <Typography fontWeight={"900"} mt={"4px"} style={{ fontWeight: "bold"}} variant={"h4"} color={"#1d556f"}>
           Book.Store
         </Typography>
       </div>
-      <Box sx={{ width: "10%", mt: "15px" }} textAlign={"center"}>
+      <Box sx={{ width: "140px", mt: "15px" }} textAlign={"center"}>
         <LinearProgress
           variant="determinate"
           value={progress}
