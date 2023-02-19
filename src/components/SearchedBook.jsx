@@ -31,8 +31,14 @@ function SearchedBook() {
     dispatch(fetchSearchedBook(inputVlaue));
   }, [dispatch, inputVlaue]);
 
-  if (data.total === "0" || data.error === "[search] Invalid request") {
-    return <NotFound total={data.total} />;
+  if (
+    data.total === "0" ||
+    data.total === "1" ||
+    data.total === "2" ||
+    data.total === "3" ||
+    data.error === "[search] Invalid request"
+  ) {
+    return <NotFound />;
   }
 
   if (loading) {
@@ -40,7 +46,7 @@ function SearchedBook() {
   }
 
   return (
-    <Container maxWidth={"500"}>
+    <Container maxWidth="xl">
       <Divider
         textAlign="left"
         sx={{

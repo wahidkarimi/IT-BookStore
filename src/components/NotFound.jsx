@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NotFound({ total }) {
+function NotFound() {
   return (
     <Container maxWidth={"500"}>
       <Divider
@@ -33,7 +33,7 @@ function NotFound({ total }) {
                 sx={{ color: "#1d556f" }}
               >
                 <span style={{ color: "#B7235A" }}> Total: </span>
-                <span style={{ color: "#1d556f" }}>{total}</span>
+                <span style={{ color: "#1d556f" }}>0</span>
               </Typography>
             </>
           }

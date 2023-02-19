@@ -35,7 +35,7 @@ export default function Loader() {
     >
       <div style={{ display: "flex", alignItems: "center"  }}>
         <img src={logo} alt="IT" style={{ borderRadius: "5px" }} width={"auto"} height={"auto"} />
-        <Typography fontWeight={"900"} mt={"4px"} style={{ fontWeight: "bold"}} variant={"h4"} color={"#1d556f"}>
+        <Typography fontWeight={"900"} mt={"4px"} style={{ fontWeight: "bold"}} variant={"h3"} color={"#1d556f"}>
           Book.Store
         </Typography>
       </div>

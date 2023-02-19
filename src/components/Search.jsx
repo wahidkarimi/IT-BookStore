@@ -10,17 +10,13 @@ import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
-import SearchSkeleton from "./SearchSkeleton";
 
 function Search(props) {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [emptyInput, setEmptyInput] = useState(false);
 
-  const book = useSelector((state) => state.book);
 
-  const { loading } = book;
 
 
   const handleFormSubmit = (e, search) => {
@@ -75,9 +71,7 @@ function Search(props) {
     window: PropTypes.func,
   };
 
-  if (loading) {
-    return <SearchSkeleton />
-  }
+ 
 
   return (
     <>
@@ -112,7 +106,7 @@ function Search(props) {
             >
               <TextField
                 fullWidth
-                sx={{ bgcolor: "#f4f4f4", mt: "10px" }}
+                sx={{ bgcolor: "#f4f4f4", mt: "10px", width: "100%" }}
                 placeholder="Search books by Title or Author..."
                 variant="outlined"
                 size="small"
