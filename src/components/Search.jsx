@@ -132,12 +132,11 @@ function Search(props) {
                 }}
               />
               <Typography
-                variant="subtitle2"
                 fontWeight={"600"}
                 color={"secondary"}
-                sx={{ display: !emptyInput ? "none" : "block" }}
+                sx={{ display: !emptyInput ? "none" : "block", fontSize: "12px" }}
               >
-                please fill the input
+                please fill the input...
               </Typography>
             </form>
           </Grid>

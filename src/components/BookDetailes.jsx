@@ -75,13 +75,13 @@ function BookDetailes() {
             >
               <Button
                 variant="contained"
-                color="secondary"
+                color="info"
                 sx={{
                   mb: "6px",
                   width: "100%",
                   alignItems: "center",
                   textAlign: "center",
-                  bgcolor: "#1d556f",
+                  bgcolor: "#B7225B",
                   pt: "5px",
                   pb: "5px",
                   textDecoration: "none",
@@ -98,13 +98,13 @@ function BookDetailes() {
             >
               <Button
                 variant="contained"
-                color="secondary"
+                color="info"
                 size="large"
                 sx={{
                   mb: "6px",
                   width: "100%",
                   textAlign: "center",
-                  bgcolor: "#1d556f",
+                  bgcolor: "#B7225B",
                   pt: "5px",
                   pb: "5px",
                   border: "none",

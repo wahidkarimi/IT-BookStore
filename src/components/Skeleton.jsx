@@ -28,7 +28,7 @@ function Skeletons() {
             return (
               <Grid
                 item
-                xs={5}
+                xs={7}
                 sm={4}
                 md={3}
                 lg={2}
