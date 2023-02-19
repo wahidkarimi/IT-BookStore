@@ -130,7 +130,6 @@ export default function MiniDrawer(props) {
       </AppBar>
       <ClickAwayListener mouseEvent="onMouseDown"
   touchEvent="onTouchStart"
-  open={open}
   onClickAway={() => open && setOpen(false)}>
       <Drawer
         variant="permanent"
