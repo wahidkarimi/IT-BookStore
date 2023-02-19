@@ -16,7 +16,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import logo from "../assets/logopng.png";
-import { Grid } from "@mui/material";
+import { ClickAwayListener, Grid } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import { Link } from "react-router-dom";
@@ -128,6 +128,10 @@ export default function MiniDrawer(props) {
           </Grid>
         </Toolbar>
       </AppBar>
+      <ClickAwayListener mouseEvent="onMouseDown"
+  touchEvent="onTouchStart"
+  open={open}
+  onClickAway={() => open && setOpen(false)}>
       <Drawer
         variant="permanent"
         open={open}
@@ -242,6 +246,7 @@ export default function MiniDrawer(props) {
           ))}
         </List>
       </Drawer>
+      </ClickAwayListener>
     </Box>
   );
 }

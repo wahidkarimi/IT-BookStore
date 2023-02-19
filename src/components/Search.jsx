@@ -1,5 +1,5 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { Grid, InputAdornment, TextField, Typography } from "@mui/material";
+import { Button, Grid, InputAdornment, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useState } from "react";
@@ -24,6 +24,8 @@ function Search(props) {
         setEmptyInput(false);
       }, 2500);
     }
+    const textField = document.getElementById("fullWidth");
+    textField.blur();
     navigate(`/search?book=${search.trim()}`);
     return setSearch("");
   };
@@ -108,10 +110,24 @@ function Search(props) {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
+                  startAdornment: (
+                    <InputAdornment position="start">
                       <SearchIcon color="info" />
                     </InputAdornment>
+                  ),
+                  endAdornment: (
+                    <>
+                    <InputAdornment position="end">
+                    <Typography  color="#1d556f">
+                      |
+                      </Typography>
+                    </InputAdornment>
+                    <InputAdornment position="end">
+                      <Button color="info" sx={{ fontWeight: "600", fontSize: "14px"}} onClick={(e) => handleFormSubmit(e, search)}>
+                      SEARCH
+                      </Button>
+                  </InputAdornment>
+                  </>
                   ),
                 }}
               />
