@@ -43,7 +43,7 @@ function DescSkeleton() {
           >
             <Skeleton
               height={"350px"}
-              width={"430px"}
+              width={"600px"}
               animation={"wave"}
               variant={"rectangular"}
             />
@@ -56,11 +56,11 @@ function DescSkeleton() {
               width={"100%"}
             />
         </Grid>
-        <Grid item xs={10} sm={10} md={8} lg={6} xl={6}>
+        <Grid item xs={12} sm={8} md={8} lg={6} xl={6}>
             <Skeleton
              variant="rounded"
              height={"310px"}
-             width={"600px"}
+             width={"100%"}
              animation={"wave"}
              />
           <Skeleton
@@ -72,7 +72,7 @@ function DescSkeleton() {
           />
           <Skeleton
             variant="rounded"
-            width={"600px"}
+            width={"100%"}
             height={"50px"}
             animation={"wave"}
             sx={{ textAlign: "center", mt: "10px" }}
