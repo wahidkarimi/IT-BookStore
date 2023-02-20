@@ -15,7 +15,6 @@ import { fetchBookDetailes } from "../Featuers/book/BookSlice";
 import DescSkeleton from "./DescSkeleton";
 import Tableinfo from "./Tableinfo";
 
-
 function BookDetailes() {
   const { id } = useParams();
 
@@ -35,23 +34,27 @@ function BookDetailes() {
 
   return (
     <Container maxWidth={"500"}>
-      <Grid container alignItems={"center"} justifyContent={"center"} mb={"30px"}>
-        <Grid item xs={11} sm={10} md={10} lg={10} xl={12}>
-        <Typography
-        variant="h4"
-        width={"100%"}
-        fontWeight={"600"}
-        textAlign={"center"}
-        mt={"100px"}
-        mb={"10px"}
-        sx={{ color: "#124A72" }}
+      <Grid
+        container
+        alignItems={"center"}
+        justifyContent={"center"}
+        mb={"30px"}
       >
-        {data.title}
-      </Typography>
-    
+        <Grid item xs={11} sm={10} md={10} lg={10} xl={12}>
+          <Typography
+            variant="h4"
+            width={"100%"}
+            fontWeight={"600"}
+            textAlign={"center"}
+            mt={"100px"}
+            mb={"10px"}
+            sx={{ color: "#124A72" }}
+          >
+            {data.title}
+          </Typography>
         </Grid>
         <Grid item xs={11} sm={6} md={5} lg={3} xl={3} margin={"10px"}>
-          <Card 
+          <Card
             sx={{
               textAlign: "center",
               boxShadow: "none",

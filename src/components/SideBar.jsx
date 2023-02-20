@@ -103,151 +103,160 @@ export default function MiniDrawer(props) {
 
   return (
     <>
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{ bgcolor: "#124A72" }}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <AppBar position="fixed" open={open} sx={{ bgcolor: "#124A72" }}>
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                marginRight: 1,
+                ...(open && { display: "none" }),
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Grid
+              container
+              alignItems={"center"}
+              justifyContent={"left"}
+              sx={{
+                display: { xs: open ? "none" : "block", sm: "block" },
+                pt: "8px",
+              }}
+            >
+              <img src={logo} alt="" width={"200px"} />
+            </Grid>
+          </Toolbar>
+        </AppBar>
+        <ClickAwayListener
+          mouseEvent="onMouseDown"
+          touchEvent="onTouchStart"
+          onClickAway={() => open && setOpen(false)}
+        >
+          <Drawer
+            variant="permanent"
+            open={open}
             sx={{
-              marginRight: 1,
-              ...(open && { display: "none" }),
+              display: {
+                xs: open ? "block" : "none",
+                sm: open ? "block" : "block",
+              },
             }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Grid
-            container
-            alignItems={"center"}
-            justifyContent={"left"}
-            sx={{ display: { xs: open ? "none" : "block", sm: "block" }, pt: "8px" }}
-          >
-            <img src={logo} alt="" width={"200px"} />
-          </Grid>
-        </Toolbar>
-      </AppBar>
-      <ClickAwayListener mouseEvent="onMouseDown"
-  touchEvent="onTouchStart"
-  onClickAway={() => open && setOpen(false)}>
-      <Drawer
-        variant="permanent"
-        open={open}
-        sx={{
-          display: {
-            xs: open ? "block" : "none",
-            sm: open ? "block" : "block",
-          },
-        }}
-      >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon color="info" />
-            ) : (
-              <ChevronLeftIcon color="info" />
-            )}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          {[
-            {
-              value: "Home",
-              icon: <HomeIcon />,
-              link: "/",
-            },
-            {
-              value: "About",
-              icon: <InfoIcon />,
-              link: "/about",
-            },
-          ].map((item) => (
-            <ListItem key={item.value} disablePadding sx={{ display: "block" }}>
-              <Link
-                to={item.link}
-                style={{ textDecoration: "none", color: "#495464" }}
-              >
-                <ListItemButton
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
-                  }}
+            <DrawerHeader>
+              <IconButton onClick={handleDrawerClose}>
+                {theme.direction === "rtl" ? (
+                  <ChevronRightIcon color="info" />
+                ) : (
+                  <ChevronLeftIcon color="info" />
+                )}
+              </IconButton>
+            </DrawerHeader>
+            <Divider />
+            <List>
+              {[
+                {
+                  value: "Home",
+                  icon: <HomeIcon />,
+                  link: "/",
+                },
+                {
+                  value: "About",
+                  icon: <InfoIcon />,
+                  link: "/about",
+                },
+              ].map((item) => (
+                <ListItem
+                  key={item.value}
+                  disablePadding
+                  sx={{ display: "block" }}
                 >
-                  <ListItemIcon
-                    sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : "auto",
-                      justifyContent: "center",
-                      color: "#124A72",
-                    }}
+                  <Link
+                    to={item.link}
+                    style={{ textDecoration: "none", color: "#495464" }}
                   >
-                    {item.icon}
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={item.value}
-                    sx={{ opacity: open ? 1 : 0, color: "#124A72" }}
-                  />
-                </ListItemButton>
-              </Link>
-            </ListItem>
-          ))}
-        </List>
-        <List sx={{ position: "absolute", bottom: "0", width: "100%" }}>
-          {[
-            {
-              value: "GitHub",
-              icon: <GitHub />,
-              link: "https://github.com/wahidkarimi",
-            },
-            {
-              value: "LinkedIn",
-              icon: <LinkedIn />,
-              link: "https://www.linkedin.com/in/wahidkarimi/",
-            },
-          ].map((item) => (
-            <ListItem
-              key={item.value}
-              disablePadding
-              sx={{ display: "block", color: "#393E46" }}
-            >
-              <a
-                href={item.link}
-                style={{ textDecoration: "none", color: "#495464" }}
-                target="_blank"
-              >
-                <ListItemButton
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
-                  }}
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: open ? "initial" : "center",
+                        px: 2.5,
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0,
+                          mr: open ? 3 : "auto",
+                          justifyContent: "center",
+                          color: "#124A72",
+                        }}
+                      >
+                        {item.icon}
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={item.value}
+                        sx={{ opacity: open ? 1 : 0, color: "#124A72" }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+            <List sx={{ position: "absolute", bottom: "0", width: "100%" }}>
+              {[
+                {
+                  value: "GitHub",
+                  icon: <GitHub />,
+                  link: "https://github.com/wahidkarimi",
+                },
+                {
+                  value: "LinkedIn",
+                  icon: <LinkedIn />,
+                  link: "https://www.linkedin.com/in/wahidkarimi/",
+                },
+              ].map((item) => (
+                <ListItem
+                  key={item.value}
+                  disablePadding
+                  sx={{ display: "block", color: "#393E46" }}
                 >
-                  <ListItemIcon
-                    sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : "auto",
-                      justifyContent: "center",
-                      color: "#124A72",
-                    }}
+                  <a
+                    href={item.link}
+                    style={{ textDecoration: "none", color: "#495464" }}
+                    target="_blank"
                   >
-                    {item.icon}
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={item.value}
-                    sx={{ opacity: open ? 1 : 0, color: "#124A72" }}
-                  />
-                </ListItemButton>
-              </a>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-      </ClickAwayListener>
-    </Box>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: open ? "initial" : "center",
+                        px: 2.5,
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0,
+                          mr: open ? 3 : "auto",
+                          justifyContent: "center",
+                          color: "#124A72",
+                        }}
+                      >
+                        {item.icon}
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={item.value}
+                        sx={{ opacity: open ? 1 : 0, color: "#124A72" }}
+                      />
+                    </ListItemButton>
+                  </a>
+                </ListItem>
+              ))}
+            </List>
+          </Drawer>
+        </ClickAwayListener>
+      </Box>
     </>
   );
 }

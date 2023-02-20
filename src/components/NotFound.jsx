@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Chip,
-  Container,
-  Divider,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Chip, Container, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -47,7 +39,9 @@ function NotFound() {
             different keywords or browse our selection of programming and
             computer science books. <br />
             <Link to="/">
-              <Typography color={"#B7225B"} fontWeight="600">Back To Home</Typography>
+              <Typography color={"#B7225B"} fontWeight="600">
+                Back To Home
+              </Typography>
             </Link>
           </Typography>
         </Grid>

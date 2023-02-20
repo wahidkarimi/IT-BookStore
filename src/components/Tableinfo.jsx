@@ -16,7 +16,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
     padding: 3,
-    paddingLeft: 10
+    paddingLeft: 10,
   },
 }));
 
@@ -28,28 +28,35 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:last-child td, &:last-child th": {
     border: 0,
     padding: 3,
-    paddingLeft: 10
+    paddingLeft: 10,
   },
 }));
 
 function Tableinfo({ data }) {
   const { rating } = data;
 
-  let value = Number(rating)
-
+  let value = Number(rating);
 
   return (
-    <TableContainer component={Paper} sx={{ boxShadow: "none", width: "100%"}}>
+    <TableContainer component={Paper} sx={{ boxShadow: "none", width: "100%" }}>
       <Table>
         <TableBody>
           <StyledTableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight="600"
+              >
                 Price
               </Typography>
             </StyledTableCell>
             <StyledTableCell align="center">
-              <Typography variant="subtitle2" color={"secondary"} fontWeight={"600"}>
+              <Typography
+                variant="subtitle2"
+                color={"secondary"}
+                fontWeight={"600"}
+              >
                 {data.price}
               </Typography>
             </StyledTableCell>
@@ -58,7 +65,11 @@ function Tableinfo({ data }) {
         <TableBody>
           <TableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight="600"
+              >
                 Rating
               </Typography>
             </StyledTableCell>
@@ -72,12 +83,20 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <TableCell>
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight="600"
+              >
                 Author
               </Typography>
             </TableCell>
             <StyledTableCell align="center">
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight={"600"}>
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight={"600"}
+              >
                 {data.authors}
               </Typography>
             </StyledTableCell>
@@ -86,12 +105,20 @@ function Tableinfo({ data }) {
         <TableBody>
           <TableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight="600"
+              >
                 Publisher
               </Typography>
             </StyledTableCell>
             <StyledTableCell align="center">
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight={"600"}>
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight={"600"}
+              >
                 {data.publisher}
               </Typography>
             </StyledTableCell>
@@ -100,12 +127,20 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <TableCell>
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight="600"
+              >
                 Published
               </Typography>
             </TableCell>
             <TableCell align="center">
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight={"600"}>
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight={"600"}
+              >
                 {data.year}
               </Typography>
             </TableCell>
@@ -114,12 +149,20 @@ function Tableinfo({ data }) {
         <TableBody>
           <TableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight="600"
+              >
                 Pages
               </Typography>
             </StyledTableCell>
             <StyledTableCell align="center">
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight={"600"}>
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight={"600"}
+              >
                 {data.pages}
               </Typography>
             </StyledTableCell>
@@ -128,12 +171,20 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <TableCell>
-              <Typography variant="subtitle2" color={"#124A72"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#124A72"}
+                fontWeight="600"
+              >
                 Language
               </Typography>
             </TableCell>
             <TableCell align="center">
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight={"600"}>
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight={"600"}
+              >
                 {data.language}
               </Typography>
             </TableCell>
@@ -142,12 +193,20 @@ function Tableinfo({ data }) {
         <TableBody>
           <TableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight="600"
+              >
                 1SBN-10
               </Typography>
             </StyledTableCell>
             <StyledTableCell align="center">
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight={"600"}>
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight={"600"}
+              >
                 {data.isbn10}
               </Typography>
             </StyledTableCell>
@@ -156,12 +215,20 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <TableCell>
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight="600"
+              >
                 1SBN-13
               </Typography>
             </TableCell>
             <TableCell align="center">
-              <Typography variant="subtitle2" color={"#1d556f"} fontWeight={"600"}>
+              <Typography
+                variant="subtitle2"
+                color={"#1d556f"}
+                fontWeight={"600"}
+              >
                 {data.isbn13}
               </Typography>
             </TableCell>

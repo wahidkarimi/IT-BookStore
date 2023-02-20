@@ -73,7 +73,11 @@ function SearchedBook() {
                 pt={"2px"}
                 sx={{ color: "#124A72" }}
               >
-                <span style={{ color: "#B7225B", fontSize: "15px" }}> Total: </span> {data.total}
+                <span style={{ color: "#B7225B", fontSize: "15px" }}>
+                  {" "}
+                  Total:{" "}
+                </span>{" "}
+                {data.total}
               </Typography>
             </>
           }
