@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setProgress(false);
-    }, 4000)
+    }, 3000)
   }, []);
 
   const theme = createTheme({
