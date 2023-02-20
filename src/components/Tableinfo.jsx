@@ -44,7 +44,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"}>
+              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
                 Price
               </Typography>
             </StyledTableCell>
@@ -58,7 +58,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <TableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"}>
+              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
                 Rating
               </Typography>
             </StyledTableCell>
@@ -72,7 +72,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <TableCell>
-              <Typography variant="subtitle2" color={"#1d556f"}>
+              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
                 Author
               </Typography>
             </TableCell>
@@ -86,7 +86,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <TableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"}>
+              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
                 Publisher
               </Typography>
             </StyledTableCell>
@@ -100,7 +100,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <TableCell>
-              <Typography variant="subtitle2" color={"#1d556f"}>
+              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
                 Published
               </Typography>
             </TableCell>
@@ -114,7 +114,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <TableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"}>
+              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
                 Pages
               </Typography>
             </StyledTableCell>
@@ -128,7 +128,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <TableCell>
-              <Typography variant="subtitle2" color={"#124A72"}>
+              <Typography variant="subtitle2" color={"#124A72"} fontWeight="600">
                 Language
               </Typography>
             </TableCell>
@@ -142,7 +142,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <TableRow>
             <StyledTableCell>
-              <Typography variant="subtitle2" color={"#1d556f"}>
+              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
                 1SBN-10
               </Typography>
             </StyledTableCell>
@@ -156,7 +156,7 @@ function Tableinfo({ data }) {
         <TableBody>
           <StyledTableRow>
             <TableCell>
-              <Typography variant="subtitle2" color={"#1d556f"}>
+              <Typography variant="subtitle2" color={"#1d556f"} fontWeight="600">
                 1SBN-13
               </Typography>
             </TableCell>

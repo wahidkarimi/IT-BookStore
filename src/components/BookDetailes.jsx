@@ -44,7 +44,7 @@ function BookDetailes() {
         textAlign={"center"}
         mt={"100px"}
         mb={"10px"}
-        sx={{ color: "#1d556f" }}
+        sx={{ color: "#124A72" }}
       >
         {data.title}
       </Typography>
@@ -55,7 +55,7 @@ function BookDetailes() {
             sx={{
               textAlign: "center",
               boxShadow: "none",
-              background: "#f4f4f4",
+              background: "#ececec",
               mb: "10px",
             }}
           >
@@ -127,14 +127,14 @@ function BookDetailes() {
             }}
           >
             <Chip
-              sx={{ bgcolor: "#f5f5f5", color: "#1d556f" }}
+              sx={{ bgcolor: "#ececec", color: "#124A72" }}
               label="Description"
             />
           </Divider>
           <Typography
             variant="subtitle2"
             fontWeight={"600"}
-            sx={{ color: "#1d556f" }}
+            sx={{ color: "#124A72" }}
           >
             {data.desc}
           </Typography>

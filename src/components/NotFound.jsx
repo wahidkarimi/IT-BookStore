@@ -24,16 +24,16 @@ function NotFound() {
       >
         <Chip
           variant="outlined"
-          sx={{ backgroundColor: "#f4f4f4" }}
+          sx={{ backgroundColor: "#ececec" }}
           label={
             <>
               <Typography
                 fontWeight={800}
                 variant={"subtitle2"}
-                sx={{ color: "#1d556f" }}
+                sx={{ color: "#124A72" }}
               >
                 <span style={{ color: "#B7235A" }}> Total: </span>
-                <span style={{ color: "#1d556f" }}>0</span>
+                <span style={{ color: "#124A72" }}>0</span>
               </Typography>
             </>
           }
@@ -41,7 +41,7 @@ function NotFound() {
       </Divider>
       <Grid container alignItems={"center"} justifyContent={"center"}>
         <Grid item xs={10} sm={10} md={8} lg={7} xl={8} margin={"30px"}>
-          <Typography color={"#1d556f"} textAlign={"center"}>
+          <Typography color={"#124A72"} textAlign={"center"}>
             We're sorry, but we couldn't find any programming and computer
             science books that match your search. Please try again with
             different keywords or browse our selection of programming and

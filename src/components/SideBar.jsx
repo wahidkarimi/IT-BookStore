@@ -15,7 +15,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import logo from "../assets/logopng.png";
+import logo from "../assets/logo.png";
 import { ClickAwayListener, Grid } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
@@ -105,7 +105,7 @@ export default function MiniDrawer(props) {
     <>
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{ bgcolor: "#1d556f" }}>
+      <AppBar position="fixed" open={open} sx={{ bgcolor: "#124A72" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -182,14 +182,14 @@ export default function MiniDrawer(props) {
                       minWidth: 0,
                       mr: open ? 3 : "auto",
                       justifyContent: "center",
-                      color: "#1d556f",
+                      color: "#124A72",
                     }}
                   >
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText
                     primary={item.value}
-                    sx={{ opacity: open ? 1 : 0, color: "#1d556f" }}
+                    sx={{ opacity: open ? 1 : 0, color: "#124A72" }}
                   />
                 </ListItemButton>
               </Link>
@@ -231,14 +231,14 @@ export default function MiniDrawer(props) {
                       minWidth: 0,
                       mr: open ? 3 : "auto",
                       justifyContent: "center",
-                      color: "#1d556f",
+                      color: "#124A72",
                     }}
                   >
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText
                     primary={item.value}
-                    sx={{ opacity: open ? 1 : 0, color: "#1d556f" }}
+                    sx={{ opacity: open ? 1 : 0, color: "#124A72" }}
                   />
                 </ListItemButton>
               </a>

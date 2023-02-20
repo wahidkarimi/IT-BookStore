@@ -1,5 +1,11 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { Button, Grid, InputAdornment, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Grid,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useState } from "react";
@@ -15,9 +21,6 @@ function Search(props) {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [emptyInput, setEmptyInput] = useState(false);
-
-
-
 
   const handleFormSubmit = (e, search) => {
     e.preventDefault();
@@ -71,8 +74,6 @@ function Search(props) {
     window: PropTypes.func,
   };
 
- 
-
   return (
     <>
       <Container>
@@ -90,7 +91,7 @@ function Search(props) {
             <Typography
               variant="h5"
               textAlign={"center"}
-              color={"#1d556f"}
+              color={"#124A72"}
               marginTop={"100px"}
               fontWeight={"600"}
             >
@@ -106,7 +107,7 @@ function Search(props) {
             >
               <TextField
                 fullWidth
-                sx={{ bgcolor: "#f4f4f4", mt: "10px", width: "100%" }}
+                sx={{ bgcolor: "#ececec", mt: "10px", width: "100%" }}
                 placeholder="Search books by Title or Author..."
                 variant="outlined"
                 size="small"
@@ -122,24 +123,29 @@ function Search(props) {
                   ),
                   endAdornment: (
                     <>
-                    <InputAdornment position="end">
-                    <Typography  color="#1d556f">
-                      |
-                      </Typography>
-                    </InputAdornment>
-                    <InputAdornment position="end">
-                      <Button color="info" sx={{ fontWeight: "600", fontSize: "14px"}} onClick={(e) => handleFormSubmit(e, search)}>
-                      SEARCH
-                      </Button>
-                  </InputAdornment>
-                  </>
+                      <InputAdornment position="end">
+                        <Typography color="#124A72">|</Typography>
+                      </InputAdornment>
+                      <InputAdornment position="end">
+                        <Button
+                          color="info"
+                          sx={{ fontWeight: "600", fontSize: "14px" }}
+                          onClick={(e) => handleFormSubmit(e, search)}
+                        >
+                          SEARCH
+                        </Button>
+                      </InputAdornment>
+                    </>
                   ),
                 }}
               />
               <Typography
                 fontWeight={"600"}
                 color={"secondary"}
-                sx={{ display: !emptyInput ? "none" : "block", fontSize: "12px" }}
+                sx={{
+                  display: !emptyInput ? "none" : "block",
+                  fontSize: "12px",
+                }}
               >
                 please fill the input...
               </Typography>

@@ -64,16 +64,16 @@ function SearchedBook() {
         <br />
         <Chip
           variant="outlined"
-          sx={{ bgcolor: "#f4f4f4", mt: "10px" }}
+          sx={{ bgcolor: "#ececec", mt: "10px" }}
           label={
             <>
               <Typography
                 fontWeight={800}
                 variant={"subtitle2"}
                 pt={"2px"}
-                sx={{ color: "#1d556f" }}
+                sx={{ color: "#124A72" }}
               >
-                <span style={{ color: "#B7225B" }}> Total: </span> {data.total}
+                <span style={{ color: "#B7225B", fontSize: "15px" }}> Total: </span> {data.total}
               </Typography>
             </>
           }
@@ -91,7 +91,7 @@ function SearchedBook() {
                 sm={4}
                 md={3}
                 lg={2}
-                xl={2}
+                xl={1}
                 key={index}
                 margin={"30px"}
               >
@@ -107,7 +107,7 @@ function SearchedBook() {
                   <CardMedia
                     className="shadow"
                     sx={{
-                      background: "#f4f4f4",
+                      background: "#ececec",
                       borderRadius: "5px",
                       border: "1px solid darkgray",
                     }}
@@ -119,19 +119,19 @@ function SearchedBook() {
                   />
                   <Link
                     to={`/book/${isbn13}`}
-                    style={{ color: "#1d556f", paddingTop: "20px" }}
+                    style={{ color: "#124A72", paddingTop: "20px" }}
                   >
                     <Typography
                       height={"95px"}
-                      variant="subtitle2"
-                      color={"#1d556f"}
+                      variant="subtitle1"
+                      color={"#124A72"}
                       fontWeight={800}
                       pt={"12px"}
                     >
                       {item.title}
                     </Typography>
                   </Link>
-                  <Typography variant="h6" color={"#B7225B"} fontWeight={800}>
+                  <Typography variant="h5" color={"#B7225B"} fontWeight={800}>
                     <Chip
                       avatar={
                         <Avatar>
@@ -140,7 +140,7 @@ function SearchedBook() {
                       }
                       label={item.price}
                       variant="outlined"
-                      sx={{ color: "#B7225B", bgcolor: "#f4f4f4" }}
+                      sx={{ color: "#B7225B", bgcolor: "#ececec" }}
                     />
                   </Typography>
                 </Card>

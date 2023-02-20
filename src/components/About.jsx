@@ -20,12 +20,12 @@ function About() {
             label={
               <>
                 <span style={{ color: "#B7235A", fontSize: "25px" }}> About </span>
-                <span style={{ color: "#1d556f", fontSize: "20px" }}>Us</span>
+                <span style={{ color: "#124A72", fontSize: "20px" }}>Us</span>
               </>
             }
           />
         </Divider>
-          <Typography variant="subtitle1" color={"#1d556f"}>
+          <Typography variant="subtitle1" color={"#124A72"}>
             <span style={{ textAlign: "center", fontSize: "20px", fontWeight: "600", alignItems: "center"}}>Welcome to IT, Programming, and Computer Science Books App! </span><br /> We are a
             one-stop shop for all your IT, Programming, and Computer Science
             book needs. Our app provides an easy way to explore books, search

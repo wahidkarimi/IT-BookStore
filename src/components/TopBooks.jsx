@@ -9,14 +9,12 @@ import {
   Container,
   Divider,
   Grid,
-  TextField,
   Typography,
 } from "@mui/material";
 import { fetchBooks } from "../Featuers/book/BookSlice";
 import { Link } from "react-router-dom";
 import Skeletons from "./Skeleton";
 import SellIcon from "@mui/icons-material/Sell";
-import Search from "./Search";
 
 function TopBooks() {
   const book = useSelector((state) => state.book);
@@ -46,11 +44,16 @@ function TopBooks() {
         >
           <Chip
             variant="outlined"
-            sx={{ backgroundColor: "#f4f4f4" }}
+            sx={{ backgroundColor: "#ececec" }}
             label={
               <>
-                <span style={{ color: "#B7235A" }}> New </span>
-                <span style={{ color: "#1d556f" }}>Releases Books</span>
+                <span style={{ color: "#B7235A", fontSize: "15px" }}>
+                  {" "}
+                  New{" "}
+                </span>
+                <span style={{ color: "#124A72", fontSize: "15px" }}>
+                  Releases Books
+                </span>
               </>
             }
           />
@@ -66,7 +69,7 @@ function TopBooks() {
                   sm={4}
                   md={3}
                   lg={2}
-                  xl={2}
+                  xl={1}
                   key={index}
                   margin={"30px"}
                 >
@@ -82,7 +85,7 @@ function TopBooks() {
                     <CardMedia
                       className="shadow"
                       sx={{
-                        background: "#f4f4f4",
+                        background: "#ececec",
                         borderRadius: "5px",
                         border: "1px solid darkgray",
                       }}
@@ -94,19 +97,19 @@ function TopBooks() {
                     />
                     <Link
                       to={`/book/${isbn13}`}
-                      style={{ color: "#1d556f", paddingTop: "20px" }}
+                      style={{ color: "#124A72", paddingTop: "20px" }}
                     >
                       <Typography
                         height={"95px"}
-                        variant="subtitle2"
-                        color={"#1d556f"}
+                        fontSize={"15px"}
+                        color={"#124A72"}
                         fontWeight={800}
                         pt={"12px"}
                       >
                         {item.title}
                       </Typography>
                     </Link>
-                    <Typography variant="h6" color={"#B7225B"} fontWeight={800}>
+                    <Typography variant="h4" color={"#B7225B"} fontWeight={900}>
                       <Chip
                         avatar={
                           <Avatar>
@@ -115,7 +118,7 @@ function TopBooks() {
                         }
                         label={item.price}
                         variant="outlined"
-                        sx={{ color: "#B7225B", bgcolor: "#f4f4f4" }}
+                        sx={{ color: "#B7225B", bgcolor: "#ececec" }}
                       />
                     </Typography>
                   </Card>

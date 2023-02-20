@@ -32,7 +32,7 @@ function Skeletons() {
                 sm={4}
                 md={3}
                 lg={2}
-                xl={2}
+                xl={1}
                 key={index}
                 margin={"30px"}
               >

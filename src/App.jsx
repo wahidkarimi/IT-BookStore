@@ -27,7 +27,7 @@ function App() {
       },
 
       info: {
-        main: "#1d556f",
+        main: "#124A72",
       },
       secondary: {
         main: "#B7225B",
@@ -46,7 +46,7 @@ function App() {
       MuiDrawer: {
         styleOverrides: {
           paper: {
-            backgroundColor: "#F4F4F4",
+            backgroundColor: "#ececec",
           },
         },
       },

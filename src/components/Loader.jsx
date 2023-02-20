@@ -35,11 +35,11 @@ export default function Loader() {
     >
       <div style={{ display: "flex", alignItems: "center"  }}>
         <img src={logo} alt="IT" style={{ borderRadius: "5px" }} width={"auto"} height={"auto"} />
-        <Typography fontWeight={"900"} mt={"4px"} style={{ fontWeight: "bold"}} variant={"h3"} color={"#1d556f"}>
+        <Typography fontWeight={"900"} mt={"4px"} style={{ fontWeight: "900"}} variant={"h3"} color={"#124A72"}>
           Book.Store
         </Typography>
       </div>
-      <Box sx={{ width: "150px", mt: "15px" }} textAlign={"center"}>
+      <Box sx={{ width: "160px", mt: "16px" }} textAlign={"center"}>
         <LinearProgress
 
           color={"info"}
